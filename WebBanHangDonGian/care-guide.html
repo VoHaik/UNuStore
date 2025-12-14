@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn bảo quản - Shop Ú Nu</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a>
+                    <a href="policies.html"><i class="fas fa-file-alt"></i> Chính sách</a>
+                    <a href="care-guide.html"><i class="fas fa-hand-holding-heart"></i> Bảo quản</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="hotline"><i class="fas fa-phone-alt"></i> Hotline: 0123.456.789</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart"></i> 
+                <span>Shop <strong>Ú Nu</strong></span>
+            </a>
+            
+            <!-- Search Bar -->
+            <div class="search-bar d-none d-lg-flex">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+                    <button class="btn" type="button" onclick="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search -->
+                <div class="search-bar d-lg-none my-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                        <button class="btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="fas fa-box"></i> Sản phẩm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                            <span class="badge bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Links -->
+    <div class="bottom-nav d-none d-md-block">
+        <div class="container">
+            <div class="category-links">
+                <a href="products.html?category=gau">
+                    <i class="fas fa-paw"></i> Gấu Bông
+                </a>
+                <a href="products.html?category=hoalen">
+                    <i class="fas fa-spa"></i> Hoa Len
+                </a>
+                <a href="products.html?category=mockhoa">
+                    <i class="fas fa-key"></i> Móc Khóa
+                </a>
+                <a href="products.html?category=tulam">
+                    <i class="fas fa-gift"></i> Tú Lam
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-center">
+                <i class="fas fa-hand-holding-heart"></i> Hướng Dẫn Bảo Quản
+            </h1>
+            <p class="text-center text-muted">Cách chăm sóc sản phẩm len handmade của bạn</p>
+        </div>
+    </section>
+
+    <!-- Care Guide Content -->
+    <section class="care-guide-section py-5">
+        <div class="container">
+            <!-- Introduction -->
+            <div class="alert alert-info mb-5">
+                <i class="fas fa-info-circle fa-2x float-start me-3"></i>
+                <p class="mb-0">
+                    Sản phẩm len handmade cần được chăm sóc đúng cách để giữ được độ bền và vẻ đẹp lâu dài. 
+                    Hãy tham khảo hướng dẫn chi tiết dưới đây để bảo quản sản phẩm của bạn một cách tốt nhất.
+                </p>
+            </div>
+
+            <!-- Daily Care -->
+            <div class="card mb-4 border-0 shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-calendar-day"></i> 1. Bảo Quản Hàng Ngày
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="care-item">
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fas fa-check-circle fa-2x text-success me-3"></i>
+                                    <div>
+                                        <h5>Nên làm</h5>
+                                        <ul>
+                                            <li>Để sản phẩm ở nơi khô ráo, thoáng mát</li>
+                                            <li>Tránh ánh nắng trực tiếp</li>
+                                            <li>Lau bụi nhẹ nhàng bằng khăn mềm</li>
+                                            <li>Để sản phẩm ở vị trí cố định</li>
+                                            <li>Dùng bàn chải mềm để chải lông nhẹ nhàng</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="care-item">
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fas fa-times-circle fa-2x text-danger me-3"></i>
+                                    <div>
+                                        <h5>Không nên làm</h5>
+                                        <ul>
+                                            <li>Để sản phẩm ở nơi ẩm ướt</li>
+                                            <li>Phơi trực tiếp dưới nắng gắt</li>
+                                            <li>Vắt hoặc kéo mạnh sản phẩm</li>
+                                            <li>Để gần nguồn nhiệt (bếp, lò...)</li>
+                                            <li>Để trẻ em vứt hoặc kéo mạnh</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cleaning Guide -->
+            <div class="card mb-4 border-0 shadow">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-soap"></i> 2. Vệ Sinh Sản Phẩm
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="text-success">2.1. Giặt tay (Khuyến nghị)</h5>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-3 text-center">
+                            <div class="step-box p-3 border rounded">
+                                <div class="step-number bg-success text-white rounded-circle d-inline-block mb-2" style="width: 40px; height: 40px; line-height: 40px;">1</div>
+                                <i class="fas fa-tint fa-3x text-primary mb-2 d-block"></i>
+                                <p class="mb-0">Ngâm trong nước lạnh 5-10 phút</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-box p-3 border rounded">
+                                <div class="step-number bg-success text-white rounded-circle d-inline-block mb-2" style="width: 40px; height: 40px; line-height: 40px;">2</div>
+                                <i class="fas fa-hand-sparkles fa-3x text-info mb-2 d-block"></i>
+                                <p class="mb-0">Dùng nước xà phòng nhẹ nhàng</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-box p-3 border rounded">
+                                <div class="step-number bg-success text-white rounded-circle d-inline-block mb-2" style="width: 40px; height: 40px; line-height: 40px;">3</div>
+                                <i class="fas fa-water fa-3x text-primary mb-2 d-block"></i>
+                                <p class="mb-0">Giặt nhẹ, không vắt mạnh</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="step-box p-3 border rounded">
+                                <div class="step-number bg-success text-white rounded-circle d-inline-block mb-2" style="width: 40px; height: 40px; line-height: 40px;">4</div>
+                                <i class="fas fa-wind fa-3x text-success mb-2 d-block"></i>
+                                <p class="mb-0">Phơi nơi thoáng mát</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="text-success">2.2. Lưu ý quan trọng</h5>
+                    <div class="alert alert-warning">
+                        <ul class="mb-0">
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Không giặt máy:</strong> Máy giặt có thể làm biến dạng sản phẩm</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Không vắt:</strong> Chỉ ép nhẹ để thoát nước</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Không sấy khô:</strong> Sấy có thể làm co sản phẩm</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Không tẩy:</strong> Tẩy trắng có thể làm phai màu</li>
+                        </ul>
+                    </div>
+
+                    <h5 class="text-success mt-4">2.3. Chất tẩy rửa phù hợp</h5>
+                    <ul>
+                        <li>Nước xà phòng nhẹ cho len</li>
+                        <li>Nước giặt trung tính</li>
+                        <li>Dầu gội đầu baby (tạm thời)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Storage Guide -->
+            <div class="card mb-4 border-0 shadow">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">
+                        <i class="fas fa-box-open"></i> 3. Bảo Quản Lâu Dài
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="text-warning">3.1. Khi không sử dụng</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-archive text-primary"></i> Đựng trong hộp</h6>
+                                    <ul class="small">
+                                        <li>Dùng hộp kín hoặc túi vải</li>
+                                        <li>Thêm gói hút ẩm</li>
+                                        <li>Tránh nén chặt sản phẩm</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-spray-can text-success"></i> Phòng chống mốc</h6>
+                                    <ul class="small">
+                                        <li>Kiểm tra định kỳ hàng tháng</li>
+                                        <li>Phơi nơi thoáng mát 2-3 tháng/lần</li>
+                                        <li>Dùng túi khử mùi, chống ẩm</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="text-warning mt-4">3.2. Bảo quản theo mùa</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-warning">
+                                <tr>
+                                    <th>Mùa</th>
+                                    <th>Điều kiện</th>
+                                    <th>Khuyến nghị</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-sun text-warning"></i> Mùa nóng</td>
+                                    <td>Nóng ẩm, dễ mốc</td>
+                                    <td>Kiểm tra thường xuyên, dùng hút ẩm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-cloud-rain text-primary"></i> Mùa mưa</td>
+                                    <td>Độ ẩm cao</td>
+                                    <td>Bảo quản trong hộp kín, tránh ẩm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-snowflake text-info"></i> Mùa lạnh</td>
+                                    <td>Khô hanh</td>
+                                    <td>Bình thường, chú ý bụi bẩn</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repair Guide -->
+            <div class="card mb-4 border-0 shadow">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-tools"></i> 4. Sửa Chữa & Bảo Dưỡng
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="text-danger">4.1. Các vấn đề thường gặp</h5>
+                    <div class="accordion" id="problemAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#problem1">
+                                    <i class="fas fa-unlink me-2"></i> Đường may bị lỏng
+                                </button>
+                            </h2>
+                            <div id="problem1" class="accordion-collapse collapse show" data-bs-parent="#problemAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Nguyên nhân:</strong> Sử dụng lâu ngày, kéo giãn</p>
+                                    <p><strong>Giải pháp:</strong></p>
+                                    <ul>
+                                        <li>Liên hệ shop để sửa chữa miễn phí (trong thời gian bảo hành)</li>
+                                        <li>Tự khâu lại nếu có kỹ năng</li>
+                                        <li>Không kéo mạnh phần bị lỏng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#problem2">
+                                    <i class="fas fa-eye-slash me-2"></i> Mất phụ kiện (mắt, mũi...)
+                                </button>
+                            </h2>
+                            <div id="problem2" class="accordion-collapse collapse" data-bs-parent="#problemAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Nguyên nhân:</strong> Phụ kiện gắn không chắc, bị kéo mạnh</p>
+                                    <p><strong>Giải pháp:</strong></p>
+                                    <ul>
+                                        <li>Liên hệ shop để mua phụ kiện thay thế</li>
+                                        <li>Shop hỗ trợ gắn lại miễn phí</li>
+                                        <li>Giá phụ kiện: 5.000đ - 20.000đ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#problem3">
+                                    <i class="fas fa-cloud me-2"></i> Bị mốc
+                                </button>
+                            </h2>
+                            <div id="problem3" class="accordion-collapse collapse" data-bs-parent="#problemAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Nguyên nhân:</strong> Bảo quản trong môi trường ẩm</p>
+                                    <p><strong>Giải pháp:</strong></p>
+                                    <ul>
+                                        <li>Giặt sạch theo hướng dẫn</li>
+                                        <li>Phơi nắng nhẹ (không trực tiếp)</li>
+                                        <li>Dùng khử mùi, diệt khuẩn</li>
+                                        <li>Bảo quản đúng cách sau đó</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#problem4">
+                                    <i class="fas fa-palette me-2"></i> Phai màu
+                                </button>
+                            </h2>
+                            <div id="problem4" class="accordion-collapse collapse" data-bs-parent="#problemAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Nguyên nhân:</strong> Phơi nắng trực tiếp, giặt không đúng cách</p>
+                                    <p><strong>Giải pháp:</strong></p>
+                                    <ul>
+                                        <li>Không thể phục hồi màu hoàn toàn</li>
+                                        <li>Tránh phơi nắng tiếp</li>
+                                        <li>Giặt với nước lạnh</li>
+                                        <li>Có thể dùng thuốc nhuộm chuyên dụng (không khuyến khích)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Categories Care -->
+            <div class="card mb-4 border-0 shadow">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-th-large"></i> 5. Bảo Quản Theo Loại Sản Phẩm
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-paw text-primary"></i> Gấu bông len</h5>
+                            <ul>
+                                <li>Định kỳ chải lông để giữ độ phồng</li>
+                                <li>Tránh để nơi có nhiều bụi</li>
+                                <li>Có thể ôm khi ngủ nhưng nên có vỏ bọc</li>
+                                <li>Kiểm tra phần mắt định kỳ</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-flower text-success"></i> Hoa len</h5>
+                            <ul>
+                                <li>Đặt trong lọ hoặc bình</li>
+                                <li>Tránh ướt, không tưới nước</li>
+                                <li>Lau bụi thường xuyên</li>
+                                <li>Có thể dùng keo để cố định hình dạng</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-key text-warning"></i> Móc khóa</h5>
+                            <ul>
+                                <li>Dễ bị bẩn do tiếp xúc nhiều</li>
+                                <li>Giặt thường xuyên hơn (1-2 tuần/lần)</li>
+                                <li>Kiểm tra xích móc khóa</li>
+                                <li>Tránh kéo giãn quá mức</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-gift text-danger"></i> Tú lam</h5>
+                            <ul>
+                                <li>Bảo quản tùy theo thiết kế cụ thể</li>
+                                <li>Liên hệ shop để được tư vấn chi tiết</li>
+                                <li>Tránh va đập mạnh</li>
+                                <li>Giữ ở nơi khô ráo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips & Tricks -->
+            <div class="card border-0 shadow bg-light">
+                <div class="card-body p-5">
+                    <h3 class="text-center mb-4">
+                        <i class="fas fa-lightbulb text-warning"></i> Mẹo Hay
+                    </h3>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="tip-box text-center p-3">
+                                <i class="fas fa-spray-can fa-3x text-primary mb-2"></i>
+                                <h6>Khử mùi tự nhiên</h6>
+                                <p class="small">Dùng bột baking soda rắc lên sản phẩm, để 30 phút rồi hút bụi</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tip-box text-center p-3">
+                                <i class="fas fa-compress fa-3x text-success mb-2"></i>
+                                <h6>Phục hồi hình dạng</h6>
+                                <p class="small">Dùng hơi nước ấm và chải nhẹ để sản phẩm trở lại phồng mềm</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tip-box text-center p-3">
+                                <i class="fas fa-shield-alt fa-3x text-info mb-2"></i>
+                                <h6>Bảo vệ màu sắc</h6>
+                                <p class="small">Thêm 1 muỗng giấm vào nước giặt để giữ màu bền lâu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="text-center mt-5">
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-headset"></i> Cần Hỗ Trợ Thêm?</h5>
+                    <p>Liên hệ với chúng tôi để được tư vấn chi tiết về cách bảo quản sản phẩm</p>
+                    <a href="about.html#contact" class="btn btn-success">
+                        <i class="fas fa-phone"></i> Liên hệ ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-heart"></i> Shop Ú Nu</h5>
+                    <p>Quà tặng len handmade độc đáo, làm từ tình yêu và sự tỉ mỉ.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-link"></i> Liên Kết</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Trang chủ</a></li>
+                        <li><a href="products.html" class="text-decoration-none">Sản phẩm</a></li>
+                        <li><a href="about.html" class="text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="policies.html" class="text-decoration-none">Chính sách đổi trả</a></li>
+                        <li><a href="care-guide.html" class="text-decoration-none">Hướng dẫn bảo quản</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-users"></i> Thông Tin Nhóm</h5>
+                    <p><strong>Nhóm:</strong> Nhóm phát triển Web</p>
+                    <p><strong>Thành viên:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>• Nguyễn Văn A - 2021XXXX</li>
+                        <li>• Trần Thị B - 2021XXXX</li>
+                        <li>• Lê Văn C - 2021XXXX</li>
+                    </ul>
+                    <p><strong>Môn học:</strong> Phát triển ứng dụng Web</p>
+                    <p><strong>Trường:</strong> Đại học XYZ</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">© 2024 Shop Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>

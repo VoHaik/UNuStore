@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Ú Nu - Quà tặng len handmade</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a>
+                    <a href="policies.html"><i class="fas fa-file-alt"></i> Chính sách</a>
+                    <a href="care-guide.html"><i class="fas fa-hand-holding-heart"></i> Bảo quản</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span class="hotline"><i class="fas fa-phone-alt"></i> Hotline: 0123.456.789</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart"></i> 
+                <span>Shop <strong>Ú Nu</strong></span>
+            </a>
+            
+            <!-- Search Bar -->
+            <div class="search-bar d-none d-lg-flex">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+                    <button class="btn" type="button" onclick="searchProducts()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Mobile Search -->
+                <div class="search-bar d-lg-none my-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                        <button class="btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">
+                            <i class="fas fa-box"></i> Sản phẩm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Giỏ hàng
+                            <span class="badge bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Links -->
+    <div class="bottom-nav d-none d-md-block">
+        <div class="container">
+            <div class="category-links">
+                <a href="products.html?category=gau">
+                    <i class="fas fa-paw"></i> Gấu Bông
+                </a>
+                <a href="products.html?category=hoalen">
+                    <i class="fas fa-spa"></i> Hoa Len
+                </a>
+                <a href="products.html?category=mockhoa">
+                    <i class="fas fa-key"></i> Móc Khóa
+                </a>
+                <a href="products.html?category=tulam">
+                    <i class="fas fa-gift"></i> Tú Lam
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section / Banner -->
+    <section class="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-overlay"></div>
+                    <img src="image_Product/gau/z7321985027787_5e68e258129f106b3729a166ad6f5ac5.jpg" class="d-block w-100" alt="Gấu bông len">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">Gấu Bông Len Handmade</h1>
+                        <p class="lead">Những chú gấu dễ thương được móc thủ công</p>
+                        <a href="products.html?category=gau" class="btn btn-primary btn-lg">Xem ngay</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-overlay"></div>
+                    <img src="image_Product/HoaLen/z7321985080420_1cec7a0016331709463b444c6d8ab6f2.jpg" class="d-block w-100" alt="Hoa len">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">Hoa Len Đẹp Mắt</h1>
+                        <p class="lead">Bó hoa không bao giờ tàn phai</p>
+                        <a href="products.html?category=hoalen" class="btn btn-primary btn-lg">Khám phá</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-overlay"></div>
+                    <img src="image_Product/MocKhoa/z7321981242631_b7f43a69b134964b2acba6780fb241b8.jpg" class="d-block w-100" alt="Móc khóa">
+                    <div class="carousel-caption">
+                        <h1 class="display-4 fw-bold">Móc Khóa Xinh Xắn</h1>
+                        <p class="lead">Phụ kiện đáng yêu cho mọi lứa tuổi</p>
+                        <a href="products.html?category=mockhoa" class="btn btn-primary btn-lg">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">
+                <i class="fas fa-th-large"></i> Danh Mục Sản Phẩm
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <a href="products.html?category=gau" class="category-card">
+                        <div class="card h-100 text-center category-hover">
+                            <div class="card-img-wrapper">
+                                <img src="image_Product/gau/z7321985058306_9f2c64e883f2d264c41550b769e53aac.jpg" class="card-img-top" alt="Gấu bông">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-paw"></i> Gấu Bông</h5>
+                                <p class="card-text">Gấu len đáng yêu, quà tặng ý nghĩa</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="products.html?category=hoalen" class="category-card">
+                        <div class="card h-100 text-center category-hover">
+                            <div class="card-img-wrapper">
+                                <img src="image_Product/HoaLen/z7321986117264_06fafbadea9150263a708da4aac84055.jpg" class="card-img-top" alt="Hoa len">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-flower"></i> Hoa Len</h5>
+                                <p class="card-text">Bó hoa vĩnh cửu, không bao giờ tàn</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="products.html?category=mockhoa" class="category-card">
+                        <div class="card h-100 text-center category-hover">
+                            <div class="card-img-wrapper">
+                                <img src="image_Product/MocKhoa/z7321981259481_ffbeef24028f0724e51f24d311cbf26c.jpg" class="card-img-top" alt="Móc khóa">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-key"></i> Móc Khóa</h5>
+                                <p class="card-text">Phụ kiện xinh xắn, cá tính</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="products.html?category=tulam" class="category-card">
+                        <div class="card h-100 text-center category-hover">
+                            <div class="card-img-wrapper">
+                                <img src="image_Product/TuLam/z7321996645392_9755347b582012ed09a16d6940430b39.jpg" class="card-img-top" alt="Tú lam">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-gift"></i> Tú Lam</h5>
+                                <p class="card-text">Sản phẩm handmade độc đáo</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">
+                <i class="fas fa-star"></i> Sản Phẩm Nổi Bật
+            </h2>
+            <div class="row g-4" id="featuredProducts">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-primary btn-lg">
+                    Xem tất cả sản phẩm <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-home py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="image_Product/gau/z7321985072517_8096ae882ae64dd3683ed63f44be371a.jpg" class="img-fluid rounded shadow" alt="Về chúng tôi">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">
+                        <i class="fas fa-heart"></i> Về Shop Ú Nu
+                    </h2>
+                    <p class="lead">
+                        Shop Ú Nu chuyên cung cấp các sản phẩm len handmade được làm thủ công với tình yêu và sự tỉ mỉ.
+                    </p>
+                    <p>
+                        Mỗi sản phẩm đều mang trong mình câu chuyện riêng và sự độc đáo. 
+                        Chúng tôi sử dụng chất liệu len cao cấp, an toàn và thân thiện với môi trường.
+                    </p>
+                    <div class="mt-4">
+                        <div class="mb-3">
+                            <i class="fas fa-check-circle text-success"></i> 100% handmade
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-check-circle text-success"></i> Chất liệu cao cấp
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-check-circle text-success"></i> Thiết kế độc đáo
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-check-circle text-success"></i> Đóng gói quà tặng miễn phí
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-outline-primary">
+                        Tìm hiểu thêm <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">
+                <i class="fas fa-comments"></i> Khách Hàng Nói Gì
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">
+                                "Sản phẩm rất đẹp và chất lượng. Gấu bông len mềm mại, đóng gói cẩn thận. Sẽ ủng hộ shop lâu dài!"
+                            </p>
+                            <p class="fw-bold mb-0">- Nguyễn Thị A</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">
+                                "Móc khóa xinh xắn lắm, làm quà tặng bạn gái rất ý nghĩa. Giá cả hợp lý, giao hàng nhanh."
+                            </p>
+                            <p class="fw-bold mb-0">- Trần Văn B</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">
+                                "Hoa len đẹp như thật, không bao giờ tàn. Đặt trên bàn làm việc trông rất xinh. Recommend 10/10!"
+                            </p>
+                            <p class="fw-bold mb-0">- Lê Thị C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-heart"></i> Shop Ú Nu</h5>
+                    <p>Quà tặng len handmade độc đáo, làm từ tình yêu và sự tỉ mỉ.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-tiktok fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-link"></i> Liên Kết</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Trang chủ</a></li>
+                        <li><a href="products.html" class="text-decoration-none">Sản phẩm</a></li>
+                        <li><a href="about.html" class="text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="policies.html" class="text-decoration-none">Chính sách đổi trả</a></li>
+                        <li><a href="care-guide.html" class="text-decoration-none">Hướng dẫn bảo quản</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fas fa-users"></i> Thông Tin Nhóm</h5>
+                    <p><strong>Nhóm:</strong> Nhóm phát triển Web</p>
+                    <p><strong>Thành viên:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>• Nguyễn Văn A - 2021XXXX</li>
+                        <li>• Trần Thị B - 2021XXXX</li>
+                        <li>• Lê Văn C - 2021XXXX</li>
+                    </ul>
+                    <p><strong>Môn học:</strong> Phát triển ứng dụng Web</p>
+                    <p><strong>Trường:</strong> Đại học XYZ</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">© 2024 Shop Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
