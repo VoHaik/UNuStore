@@ -1,16 +1,16 @@
-# Shop Ú Nu - Website Bán Hàng Len Handmade
+# Shop Mặt Trời Ú Nu - Website Bán Hàng Len Handmade
 
 Website bán hàng đơn giản chuyên về sản phẩm len handmade, được xây dựng bằng HTML, CSS, JavaScript thuần.
 
 ## 📋 Mô tả dự án
 
-Shop Ú Nu là website thương mại điện tử đơn giản chuyên cung cấp các sản phẩm len handmade như gấu bông, hoa len, móc khóa và tú lam. Website được thiết kế với giao diện thân thiện, dễ sử dụng và có đầy đủ các chức năng cơ bản của một trang bán hàng.
+Shop Mặt Trời Ú Nu là website thương mại điện tử đơn giản chuyên cung cấp các sản phẩm len handmade như gấu bông, hoa len, móc khóa và set tự làm. Website được thiết kế với giao diện thân thiện, dễ sử dụng và có đầy đủ các chức năng cơ bản của một trang bán hàng.
 
 ## ✨ Tính năng chính
 
 ### 1. Trang chủ (index.html)
 - Banner carousel hiển thị sản phẩm nổi bật
-- Danh mục sản phẩm (4 loại: Gấu bông, Hoa len, Móc khóa, Tú lam)
+- Danh mục sản phẩm (4 loại: Gấu bông, Hoa len, Móc khóa, Set tự làm)
 - Sản phẩm nổi bật
 - Phần giới thiệu về shop
 - Đánh giá từ khách hàng
@@ -91,7 +91,7 @@ WebBanHangDonGian/
 │   ├── gau/               # Ảnh gấu bông
 │   ├── HoaLen/            # Ảnh hoa len
 │   ├── MocKhoa/           # Ảnh móc khóa
-│   └── TuLam/             # Ảnh tú lam
+│   └── TuLam/             # Ảnh set tự làm
 │
 └── README.md              # File này
 ```
@@ -207,7 +207,7 @@ Mở file `app.js` và thêm object vào mảng `products`:
 {
     id: 11,
     name: 'Tên sản phẩm',
-    category: 'gau', // hoặc 'hoalen', 'mockhoa', 'tulam'
+    category: 'gau', // hoặc 'hoalen', 'mockhoa', 'tulam' (set tự làm)
     price: 100000,
     priceRange: '100.000đ - 200.000đ',
     description: 'Mô tả sản phẩm',

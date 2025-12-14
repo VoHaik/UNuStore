@@ -5,8 +5,8 @@ const products = [
         id: 1,
         name: 'Gấu Bông Nâu Đáng Yêu',
         category: 'gau',
-        price: 150000,
-        priceRange: '150.000đ - 250.000đ',
+        price: 200000,
+        priceRange: '200.000đ - 240.000đ',
         description: 'Gấu bông len handmade siêu dễ thương, làm từ len milk cotton mềm mại',
         image: 'image_Product/gau/z7321985027787_5e68e258129f106b3729a166ad6f5ac5.jpg',
         images: [
@@ -15,9 +15,9 @@ const products = [
             'image_Product/gau/z7321985039540_f3d88933018af8d017ba7119b390bebf.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (15cm)', price: 150000 },
-            { name: 'Vừa (20cm)', price: 200000 },
-            { name: 'Lớn (25cm)', price: 250000 }
+            { name: 'Nhỏ (15cm)', price: 200000 },
+            { name: 'Vừa (20cm)', price: 220000 },
+            { name: 'Lớn (25cm)', price: 240000 }
         ],
         featured: true
     },
@@ -25,8 +25,8 @@ const products = [
         id: 2,
         name: 'Gấu Bông Trắng Xinh Xắn',
         category: 'gau',
-        price: 180000,
-        priceRange: '180.000đ - 280.000đ',
+        price: 200000,
+        priceRange: '200.000đ - 240.000đ',
         description: 'Gấu bông trắng tinh khôi, mềm mại và dễ thương',
         image: 'image_Product/gau/z7321985052515_63c0386b1e08cdbe633d9bff7a7ad936.jpg',
         images: [
@@ -34,9 +34,9 @@ const products = [
             'image_Product/gau/z7321985058306_9f2c64e883f2d264c41550b769e53aac.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (15cm)', price: 180000 },
-            { name: 'Vừa (20cm)', price: 230000 },
-            { name: 'Lớn (25cm)', price: 280000 }
+            { name: 'Nhỏ (15cm)', price: 200000 },
+            { name: 'Vừa (20cm)', price: 220000 },
+            { name: 'Lớn (25cm)', price: 240000 }
         ],
         featured: false
     },
@@ -44,8 +44,8 @@ const products = [
         id: 3,
         name: 'Gấu Bông Nhiều Màu Sắc',
         category: 'gau',
-        price: 160000,
-        priceRange: '160.000đ - 260.000đ',
+        price: 200000,
+        priceRange: '200.000đ - 240.000đ',
         description: 'Gấu bông với nhiều màu sắc rực rỡ, phù hợp làm quà tặng',
         image: 'image_Product/gau/z7321985063090_40880bb8ef02935926a2730df991da5c.jpg',
         images: [
@@ -53,9 +53,9 @@ const products = [
             'image_Product/gau/z7321985072517_8096ae882ae64dd3683ed63f44be371a.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (15cm)', price: 160000 },
-            { name: 'Vừa (20cm)', price: 210000 },
-            { name: 'Lớn (25cm)', price: 260000 }
+            { name: 'Nhỏ (15cm)', price: 200000 },
+            { name: 'Vừa (20cm)', price: 220000 },
+            { name: 'Lớn (25cm)', price: 240000 }
         ],
         featured: true
     },
@@ -66,7 +66,7 @@ const products = [
         name: 'Bó Hoa Len Lãng Mạn',
         category: 'hoalen',
         price: 250000,
-        priceRange: '250.000đ - 450.000đ',
+        priceRange: '250.000đ - 300.000đ',
         description: 'Bó hoa len handmade đẹp mắt, không bao giờ tàn',
         image: 'image_Product/HoaLen/z7321985080420_1cec7a0016331709463b444c6d8ab6f2.jpg',
         images: [
@@ -75,8 +75,8 @@ const products = [
         ],
         sizes: [
             { name: 'Nhỏ (5 bông)', price: 250000 },
-            { name: 'Vừa (9 bông)', price: 350000 },
-            { name: 'Lớn (15 bông)', price: 450000 }
+            { name: 'Vừa (9 bông)', price: 275000 },
+            { name: 'Lớn (15 bông)', price: 300000 }
         ],
         featured: true
     },
@@ -84,17 +84,17 @@ const products = [
         id: 5,
         name: 'Hoa Len Pastel Nhẹ Nhàng',
         category: 'hoalen',
-        price: 280000,
-        priceRange: '280.000đ - 480.000đ',
+        price: 250000,
+        priceRange: '250.000đ - 300.000đ',
         description: 'Bó hoa với tông màu pastel nhẹ nhàng, thanh lịch',
         image: 'image_Product/HoaLen/z7321986118812_0f038e24515702724d831e2c05e70c8d.jpg',
         images: [
             'image_Product/HoaLen/z7321986118812_0f038e24515702724d831e2c05e70c8d.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (5 bông)', price: 280000 },
-            { name: 'Vừa (9 bông)', price: 380000 },
-            { name: 'Lớn (15 bông)', price: 480000 }
+            { name: 'Nhỏ (5 bông)', price: 250000 },
+            { name: 'Vừa (9 bông)', price: 275000 },
+            { name: 'Lớn (15 bông)', price: 300000 }
         ],
         featured: false
     },
@@ -104,8 +104,8 @@ const products = [
         id: 6,
         name: 'Móc Khóa Thú Cưng Mini',
         category: 'mockhoa',
-        price: 50000,
-        priceRange: '50.000đ - 80.000đ',
+        price: 45000,
+        priceRange: '45.000đ - 55.000đ',
         description: 'Móc khóa len hình thú cưng siêu đáng yêu',
         image: 'image_Product/MocKhoa/z7321981242631_b7f43a69b134964b2acba6780fb241b8.jpg',
         images: [
@@ -113,9 +113,9 @@ const products = [
             'image_Product/MocKhoa/z7321981259481_ffbeef24028f0724e51f24d311cbf26c.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (5cm)', price: 50000 },
-            { name: 'Vừa (7cm)', price: 65000 },
-            { name: 'Lớn (10cm)', price: 80000 }
+            { name: 'Nhỏ (5cm)', price: 45000 },
+            { name: 'Vừa (7cm)', price: 50000 },
+            { name: 'Lớn (10cm)', price: 55000 }
         ],
         featured: true
     },
@@ -124,7 +124,7 @@ const products = [
         name: 'Móc Khóa Hình Trái Tim',
         category: 'mockhoa',
         price: 45000,
-        priceRange: '45.000đ - 75.000đ',
+        priceRange: '45.000đ - 55.000đ',
         description: 'Móc khóa hình trái tim, quà tặng ý nghĩa',
         image: 'image_Product/MocKhoa/z7321981259482_237c7d6875d74d54a0e61b674c9d684f.jpg',
         images: [
@@ -133,8 +133,8 @@ const products = [
         ],
         sizes: [
             { name: 'Nhỏ (5cm)', price: 45000 },
-            { name: 'Vừa (7cm)', price: 60000 },
-            { name: 'Lớn (10cm)', price: 75000 }
+            { name: 'Vừa (7cm)', price: 50000 },
+            { name: 'Lớn (10cm)', price: 55000 }
         ],
         featured: false
     },
@@ -142,8 +142,8 @@ const products = [
         id: 8,
         name: 'Móc Khóa Nhiều Hình Thú',
         category: 'mockhoa',
-        price: 55000,
-        priceRange: '55.000đ - 85.000đ',
+        price: 45000,
+        priceRange: '45.000đ - 55.000đ',
         description: 'Bộ móc khóa đa dạng hình thú',
         image: 'image_Product/MocKhoa/z7321981263297_9b382ca34bf3a50b9cf6977b8b214858.jpg',
         images: [
@@ -152,48 +152,48 @@ const products = [
             'image_Product/MocKhoa/z7321981283540_780df0021e181e0813f7b6ef8625f7b9.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ (5cm)', price: 55000 },
-            { name: 'Vừa (7cm)', price: 70000 },
-            { name: 'Lớn (10cm)', price: 85000 }
+            { name: 'Nhỏ (5cm)', price: 45000 },
+            { name: 'Vừa (7cm)', price: 50000 },
+            { name: 'Lớn (10cm)', price: 55000 }
         ],
         featured: true
     },
     
-    // Tú lam
+    // Set tự làm
     {
         id: 9,
-        name: 'Tú Lam Handmade Cao Cấp',
+        name: 'Set Tự Làm Handmade Cao Cấp',
         category: 'tulam',
-        price: 300000,
-        priceRange: '300.000đ - 500.000đ',
-        description: 'Sản phẩm tú lam handmade độc đáo',
+        price: 30000,
+        priceRange: '30.000đ - 40.000đ',
+        description: 'Set tự làm handmade độc đáo',
         image: 'image_Product/TuLam/z7321996645392_9755347b582012ed09a16d6940430b39.jpg',
         images: [
             'image_Product/TuLam/z7321996645392_9755347b582012ed09a16d6940430b39.jpg',
             'image_Product/TuLam/z7321996648663_c4f5f4a7f2150a47274401d9b7fdd749.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ', price: 300000 },
-            { name: 'Vừa', price: 400000 },
-            { name: 'Lớn', price: 500000 }
+            { name: 'Nhỏ', price: 30000 },
+            { name: 'Vừa', price: 35000 },
+            { name: 'Lớn', price: 40000 }
         ],
         featured: false
     },
     {
         id: 10,
-        name: 'Tú Lam Màu Sắc Rực Rỡ',
+        name: 'Set Tự Làm Màu Sắc Rực Rỡ',
         category: 'tulam',
-        price: 350000,
-        priceRange: '350.000đ - 550.000đ',
-        description: 'Tú lam với màu sắc bắt mắt',
+        price: 30000,
+        priceRange: '30.000đ - 40.000đ',
+        description: 'Set tự làm với màu sắc bắt mắt',
         image: 'image_Product/TuLam/z7321996660858_457cafa744404a78e5fd5d7d4ece5454.jpg',
         images: [
             'image_Product/TuLam/z7321996660858_457cafa744404a78e5fd5d7d4ece5454.jpg'
         ],
         sizes: [
-            { name: 'Nhỏ', price: 350000 },
-            { name: 'Vừa', price: 450000 },
-            { name: 'Lớn', price: 550000 }
+            { name: 'Nhỏ', price: 30000 },
+            { name: 'Vừa', price: 35000 },
+            { name: 'Lớn', price: 40000 }
         ],
         featured: true
     }
@@ -400,7 +400,7 @@ function getCategoryName(category) {
         'gau': 'Gấu Bông',
         'hoalen': 'Hoa Len',
         'mockhoa': 'Móc Khóa',
-        'tulam': 'Tú Lam'
+        'tulam': 'Set tự làm'
     };
     return categories[category] || category;
 }
