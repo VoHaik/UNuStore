@@ -1,10 +1,10 @@
-# Shop Mặt Trời Ú Nu - Website Bán Hàng Len Handmade
+# Mặt Trời Ú Nu - Website Bán Hàng Len Handmade
 
 Website bán hàng đơn giản chuyên về sản phẩm len handmade, được xây dựng bằng HTML, CSS, JavaScript thuần.
 
 ## 📋 Mô tả dự án
 
-Shop Mặt Trời Ú Nu là website thương mại điện tử đơn giản chuyên cung cấp các sản phẩm len handmade như gấu bông, hoa len, móc khóa và set tự làm. Website được thiết kế với giao diện thân thiện, dễ sử dụng và có đầy đủ các chức năng cơ bản của một trang bán hàng.
+Mặt Trời Ú Nu là website thương mại điện tử đơn giản chuyên cung cấp các sản phẩm len handmade như gấu bông, hoa len, móc khóa và set tự làm. Website được thiết kế với giao diện thân thiện, dễ sử dụng và có đầy đủ các chức năng cơ bản của một trang bán hàng.
 
 ## ✨ Tính năng chính
 

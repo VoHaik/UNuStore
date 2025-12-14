@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chính sách đổi trả - Shop Mặt Trời Ú Nu</title>
+    <title>Chính sách đổi trả - Mặt Trời Ú Nu</title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,28 +12,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a>
-                    <a href="policies.html"><i class="fas fa-file-alt"></i> Chính sách</a>
-                    <a href="care-guide.html"><i class="fas fa-hand-holding-heart"></i> Bảo quản</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="hotline"><i class="fas fa-phone-alt"></i> Hotline: 0123.456.789</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-heart"></i> 
-                <span>Shop <strong>Mặt Trời Ú Nu</strong></span>
+                <span><strong>Mặt Trời Ú Nu</strong></span>
             </a>
             
             <!-- Search Bar -->
@@ -46,9 +30,19 @@
                 </div>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="d-flex align-items-center ms-auto">
+                <div class="cart-quick d-none d-lg-flex">
+                    <a class="btn btn-light cart-pill" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-pill-label">Giỏ hàng</span>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </a>
+                </div>
+
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Mobile Search -->
@@ -61,11 +55,15 @@
                     </div>
                 </div>
 
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="fas fa-home"></i> Trang chủ
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-home"></i> Trang chủ <i class="fas fa-caret-down dropdown-caret"></i>
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li><a class="dropdown-item" href="index.html#aboutSection"><i class="fas fa-heart"></i> Về chúng tôi</a></li>
+                            <li><a class="dropdown-item" href="index.html#policySection"><i class="fas fa-file-alt"></i> Chính sách</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">
@@ -73,6 +71,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="care-guide.html">
+                            <i class="fas fa-hand-holding-heart"></i> Bảo quản
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
                         <a class="nav-link cart-link" href="cart.html">
                             <i class="fas fa-shopping-cart"></i> Giỏ hàng
                             <span class="badge bg-danger" id="cartCount">0</span>
@@ -109,7 +112,7 @@
             <h1 class="display-5 fw-bold text-center">
                 <i class="fas fa-file-contract"></i> Chính Sách Đổi Trả
             </h1>
-            <p class="text-center text-muted">Quy định và điều khoản của Shop Mặt Trời Ú Nu</p>
+            <p class="text-center text-muted">Quy định và điều khoản của Mặt Trời Ú Nu</p>
         </div>
     </section>
 
@@ -125,7 +128,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="text-primary">1.1. Điều kiện đổi trả</h5>
-                    <p>Shop Mặt Trời Ú Nu chấp nhận đổi trả sản phẩm trong các trường hợp sau:</p>
+                    <p>Mặt Trời Ú Nu chấp nhận đổi trả sản phẩm trong các trường hợp sau:</p>
                     <ul>
                         <li>Sản phẩm bị lỗi do nhà sản xuất (hỏng hóc, sai màu sắc, sai kích thước đã đặt)</li>
                         <li>Sản phẩm không đúng với mô tả trên website</li>
@@ -284,7 +287,7 @@
                     <div class="alert alert-warning">
                         <p class="mb-1"><strong>Ngân hàng:</strong> Vietcombank</p>
                         <p class="mb-1"><strong>Số tài khoản:</strong> 0123456789</p>
-                        <p class="mb-1"><strong>Chủ tài khoản:</strong> Shop Mặt Trời Ú Nu</p>
+                        <p class="mb-1"><strong>Chủ tài khoản:</strong> Mặt Trời Ú Nu</p>
                         <p class="mb-0"><strong>Nội dung:</strong> [Tên khách hàng] - [Số điện thoại]</p>
                     </div>
                 </div>
@@ -345,7 +348,7 @@
                         <div class="col-md-4">
                             <div class="d-flex align-items-center justify-content-center">
                                 <i class="fab fa-facebook text-info me-2"></i>
-                                <span><strong>Facebook:</strong> Shop Mặt Trời Ú Nu</span>
+                                <span><strong>Facebook:</strong> Mặt Trời Ú Nu</span>
                             </div>
                         </div>
                     </div>
@@ -354,13 +357,25 @@
         </div>
     </section>
 
+    <!-- Info Strip -->
+    <div class="info-strip py-3">
+        <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-3">
+            <div class="info-links d-flex flex-wrap gap-3">
+                <a href="index.html#aboutSection"><i class="fas fa-info-circle"></i> Về chúng tôi</a>
+                <a href="index.html#policySection"><i class="fas fa-file-alt"></i> Chính sách</a>
+                <a href="care-guide.html"><i class="fas fa-hand-holding-heart"></i> Bảo quản</a>
+            </div>
+            <span class="hotline"><i class="fas fa-phone-alt"></i> Hotline: 0123.456.789</span>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5><i class="fas fa-heart"></i> Shop Mặt Trời Ú Nu</h5>
-                    <p>Quà tặng len handmade độc đáo, làm từ tình yêu và sự tỉ mỉ.</p>
+                    <h5><i class="fas fa-heart"></i> Mặt Trời Ú Nu</h5>
+                    <p>Quà tặng len handmade độc đáo, được làm thủ công với sự tỉ mỉ.</p>
                     <div class="social-links">
                         <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fa-2x"></i></a>
                         <a href="#" class="text-decoration-none me-3"><i class="fab fa-instagram fa-2x"></i></a>
@@ -379,20 +394,30 @@
                 </div>
                 <div class="col-md-4">
                     <h5><i class="fas fa-users"></i> Thông Tin Nhóm</h5>
-                    <p><strong>Nhóm:</strong> Nhóm phát triển Web</p>
-                    <p><strong>Thành viên:</strong></p>
-                    <ul class="list-unstyled">
-                        <li>• Nguyễn Văn A - 2021XXXX</li>
-                        <li>• Trần Thị B - 2021XXXX</li>
-                        <li>• Lê Văn C - 2021XXXX</li>
+                    <p><strong>Trường:</strong> Đại học Quy Nhơn</p>
+                    <p><strong>Học phần:</strong> Thương Mại Điện Tử</p>
+                    <p><strong>Nhóm:</strong> Nhóm 5</p>
+                    <p class="mb-1"><strong>Thành viên:</strong></p>
+                    <ul class="list-unstyled mb-2">
+                        <li>• Huỳnh Thị Hằng</li>
+                        <li>• Nguyễn Bích Ngân</li>
+                        <li>• Đặng Trần Nguyên Thảo</li>
+                        <li>• Nguyễn Thị Mỹ Thảo</li>
+                        <li>• Hồ Thị Cảm Tình</li>
+                        <li>• Lê Mỹ Trang</li>
+                        <li>• Huỳnh Thị Mỹ Trâm</li>
+                        <li>• Lưu Ngọc Trân</li>
+                        <li>• Nguyễn Phan Kim Trúc</li>
+                        <li>• Phạm Thị Ngọc Trúc</li>
+                        <li>• Lê Thị Kiều Vi</li>
                     </ul>
-                    <p><strong>Môn học:</strong> Phát triển ứng dụng Web</p>
-                    <p><strong>Trường:</strong> Đại học XYZ</p>
+                    <p class="mb-1"><strong>Email:</strong> nguyenthimythao05@gmail.com</p>
+                    <p class="mb-0"><strong>Liên hệ:</strong> 0354577437 (Trân)</p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p class="mb-0">© 2024 Shop Mặt Trời Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
+                <p class="mb-0">© 2024 Mặt Trời Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
             </div>
         </div>
     </footer>

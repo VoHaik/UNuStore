@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm - Shop Mặt Trời Ú Nu</title>
+    <title>Chi tiết sản phẩm - Mặt Trời Ú Nu</title>
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,28 +12,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <a href="about.html"><i class="fas fa-info-circle"></i> Về chúng tôi</a>
-                    <a href="policies.html"><i class="fas fa-file-alt"></i> Chính sách</a>
-                    <a href="care-guide.html"><i class="fas fa-hand-holding-heart"></i> Bảo quản</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="hotline"><i class="fas fa-phone-alt"></i> Hotline: 0123.456.789</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="fas fa-heart"></i> 
-                <span>Shop <strong>Mặt Trời Ú Nu</strong></span>
+                <span><strong>Mặt Trời Ú Nu</strong></span>
             </a>
             
             <!-- Search Bar -->
@@ -46,9 +30,19 @@
                 </div>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="d-flex align-items-center ms-auto">
+                <div class="cart-quick d-none d-lg-flex">
+                    <a class="btn btn-light cart-pill" href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-pill-label">Giỏ hàng</span>
+                        <span class="badge bg-danger" id="cartCount">0</span>
+                    </a>
+                </div>
+
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Mobile Search -->
@@ -61,11 +55,15 @@
                     </div>
                 </div>
 
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="fas fa-home"></i> Trang chủ
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-home"></i> Trang chủ <i class="fas fa-caret-down dropdown-caret"></i>
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                            <li><a class="dropdown-item" href="index.html#aboutSection"><i class="fas fa-heart"></i> Về chúng tôi</a></li>
+                            <li><a class="dropdown-item" href="index.html#policySection"><i class="fas fa-file-alt"></i> Chính sách</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="products.html">
@@ -73,9 +71,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="care-guide.html">
+                            <i class="fas fa-hand-holding-heart"></i> Bảo quản
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none">
                         <a class="nav-link cart-link" href="cart.html">
                             <i class="fas fa-shopping-cart"></i> Giỏ hàng
-                            <span class="badge bg-danger" id="cartCount">0</span>
+                            <span class="badge bg-danger" id="cartCountMobile">0</span>
                         </a>
                     </li>
                 </ul>
@@ -151,103 +154,76 @@
                             <small class="text-muted">*Giá có thể thay đổi theo kích thước</small>
                         </div>
 
-                        <div class="product-description mb-4">
-                            <p id="productDescription"></p>
-                        </div>
-
-                        <hr>
+                        <p class="text-muted mb-4" id="productDescription">Sản phẩm len handmade được làm thủ công với tình yêu và sự tỉ mỉ.</p>
 
                         <!-- Size Selection -->
-                        <div class="mb-4" id="sizeSelection">
-                            <label class="form-label fw-bold">
-                                <i class="fas fa-ruler-combined"></i> Kích thước:
-                            </label>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary size-btn" data-size="small" data-price="50000">
-                                    5x5,5cm<br><small>50.000đ</small>
-                                </button>
-                                <button class="btn btn-outline-primary size-btn" data-size="medium" data-price="80000">
-                                    7x7,5cm<br><small>80.000đ</small>
-                                </button>
-                                <button class="btn btn-outline-primary size-btn" data-size="large" data-price="120000">
-                                    10x10cm<br><small>120.000đ</small>
-                                </button>
+                        <div id="sizeSelection" class="mb-4">
+                            <h6 class="mb-2">Chọn kích thước</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <!-- Size buttons will be loaded here -->
                             </div>
                         </div>
 
-                        <!-- Gift Package Option -->
-                        <div class="mb-4">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="giftPackage">
-                                <label class="form-check-label fw-bold" for="giftPackage">
-                                    <i class="fas fa-gift"></i> Đóng gói quà tặng (+10.000đ)
-                                </label>
+                        <!-- Quantity and Gift Package -->
+                        <div class="row g-3 align-items-center mb-4">
+                            <div class="col-sm-6">
+                                <label class="form-label small text-muted mb-1">Số lượng</label>
+                                <div class="input-group quantity-group">
+                                    <button class="btn btn-outline-secondary" type="button" id="decreaseQty">-</button>
+                                    <input type="number" class="form-control text-center" id="quantity" value="1" min="1">
+                                    <button class="btn btn-outline-secondary" type="button" id="increaseQty">+</button>
+                                </div>
                             </div>
-                            <small class="text-muted">Túi đựng xinh xắn, thiệp chúc mừng miễn phí</small>
-                        </div>
-
-                        <!-- Quantity -->
-                        <div class="mb-4">
-                            <label class="form-label fw-bold">
-                                <i class="fas fa-shopping-basket"></i> Số lượng:
-                            </label>
-                            <div class="input-group" style="max-width: 150px;">
-                                <button class="btn btn-outline-secondary" type="button" id="decreaseQty">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <input type="number" class="form-control text-center" id="quantity" value="1" min="1" max="99">
-                                <button class="btn btn-outline-secondary" type="button" id="increaseQty">
-                                    <i class="fas fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Total Price -->
-                        <div class="mb-4">
-                            <div class="alert alert-info">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold">Tổng cộng:</span>
-                                    <span class="h4 mb-0 text-primary" id="totalPrice">50.000đ</span>
+                            <div class="col-sm-6">
+                                <div class="form-check mt-3 mt-sm-0">
+                                    <input class="form-check-input" type="checkbox" id="giftPackage">
+                                    <label class="form-check-label" for="giftPackage">
+                                        Đóng gói quà (+10.000đ)
+                                    </label>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Action Buttons -->
-                        <div class="d-grid gap-2 mb-4">
-                            <button class="btn btn-primary btn-lg" id="addToCartBtn">
-                                <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-                            </button>
-                            <button class="btn btn-outline-primary btn-lg" id="buyNowBtn">
-                                <i class="fas fa-bolt"></i> Mua ngay
-                            </button>
+                        <!-- Total Price and Action Buttons -->
+                        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+                            <div>
+                                <small class="text-muted d-block">Tạm tính</small>
+                                <h4 class="mb-0 text-primary" id="totalPrice">0đ</h4>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="btn btn-outline-primary" id="addToCartBtn">
+                                    <i class="fas fa-cart-plus"></i> Thêm vào giỏ
+                                </button>
+                                <button class="btn btn-primary" id="buyNowBtn">
+                                    <i class="fas fa-bolt"></i> Mua ngay
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Product Features -->
-                        <div class="product-features">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <div class="feature-item p-3 bg-light rounded text-center">
-                                        <i class="fas fa-hand-sparkles fa-2x text-primary mb-2"></i>
-                                        <p class="mb-0 small">100% Handmade</p>
-                                    </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="feature-item p-3 bg-light rounded text-center">
+                                    <i class="fas fa-shield-heart fa-2x text-success mb-2"></i>
+                                    <p class="mb-0 small">Chất liệu an toàn</p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="feature-item p-3 bg-light rounded text-center">
-                                        <i class="fas fa-shield-alt fa-2x text-success mb-2"></i>
-                                        <p class="mb-0 small">Chất liệu an toàn</p>
-                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="feature-item p-3 bg-light rounded text-center">
+                                    <i class="fas fa-exchange-alt fa-2x text-warning mb-2"></i>
+                                    <p class="mb-0 small">Đổi trả 7 ngày</p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="feature-item p-3 bg-light rounded text-center">
-                                        <i class="fas fa-exchange-alt fa-2x text-warning mb-2"></i>
-                                        <p class="mb-0 small">Đổi trả 7 ngày</p>
-                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="feature-item p-3 bg-light rounded text-center">
+                                    <i class="fas fa-shipping-fast fa-2x text-info mb-2"></i>
+                                    <p class="mb-0 small">Giao hàng toàn quốc</p>
                                 </div>
-                                <div class="col-6">
-                                    <div class="feature-item p-3 bg-light rounded text-center">
-                                        <i class="fas fa-shipping-fast fa-2x text-info mb-2"></i>
-                                        <p class="mb-0 small">Giao hàng toàn quốc</p>
-                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="feature-item p-3 bg-light rounded text-center">
+                                    <i class="fas fa-gift fa-2x text-primary mb-2"></i>
+                                    <p class="mb-0 small">Tặng kèm túi quà</p>
                                 </div>
                             </div>
                         </div>
@@ -308,7 +284,7 @@
                                 <li>Đổi trả trong vòng 7 ngày kể từ ngày nhận hàng</li>
                                 <li>Sản phẩm còn nguyên tem mác, chưa qua sử dụng</li>
                                 <li>Hoàn tiền 100% nếu sản phẩm bị lỗi từ nhà sản xuất</li>
-                                <li>Liên hệ: 0123.456.789 hoặc email: shopunu@example.com</li>
+                                <li>Liên hệ: 0123.456.789 hoặc email: contact@example.com</li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="care">
@@ -344,8 +320,8 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-md-4">
-                    <h5><i class="fas fa-heart"></i> Shop Mặt Trời Ú Nu</h5>
-                    <p>Quà tặng len handmade độc đáo, làm từ tình yêu và sự tỉ mỉ.</p>
+                    <h5><i class="fas fa-heart"></i> Mặt Trời Ú Nu</h5>
+                    <p>Quà tặng len handmade độc đáo, được làm thủ công với sự tỉ mỉ.</p>
                     <div class="social-links">
                         <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fa-2x"></i></a>
                         <a href="#" class="text-decoration-none me-3"><i class="fab fa-instagram fa-2x"></i></a>
@@ -364,20 +340,30 @@
                 </div>
                 <div class="col-md-4">
                     <h5><i class="fas fa-users"></i> Thông Tin Nhóm</h5>
-                    <p><strong>Nhóm:</strong> Nhóm phát triển Web</p>
-                    <p><strong>Thành viên:</strong></p>
-                    <ul class="list-unstyled">
-                        <li>• Nguyễn Văn A - 2021XXXX</li>
-                        <li>• Trần Thị B - 2021XXXX</li>
-                        <li>• Lê Văn C - 2021XXXX</li>
+                    <p><strong>Trường:</strong> Đại học Quy Nhơn</p>
+                    <p><strong>Học phần:</strong> Thương Mại Điện Tử</p>
+                    <p><strong>Nhóm:</strong> Nhóm 5</p>
+                    <p class="mb-1"><strong>Thành viên:</strong></p>
+                    <ul class="list-unstyled mb-2">
+                        <li>• Huỳnh Thị Hằng</li>
+                        <li>• Nguyễn Bích Ngân</li>
+                        <li>• Đặng Trần Nguyên Thảo</li>
+                        <li>• Nguyễn Thị Mỹ Thảo</li>
+                        <li>• Hồ Thị Cảm Tình</li>
+                        <li>• Lê Mỹ Trang</li>
+                        <li>• Huỳnh Thị Mỹ Trâm</li>
+                        <li>• Lưu Ngọc Trân</li>
+                        <li>• Nguyễn Phan Kim Trúc</li>
+                        <li>• Phạm Thị Ngọc Trúc</li>
+                        <li>• Lê Thị Kiều Vi</li>
                     </ul>
-                    <p><strong>Môn học:</strong> Phát triển ứng dụng Web</p>
-                    <p><strong>Trường:</strong> Đại học XYZ</p>
+                    <p class="mb-1"><strong>Email:</strong> nguyenthimythao05@gmail.com</p>
+                    <p class="mb-0"><strong>Liên hệ:</strong> 0354577437 (Trân)</p>
                 </div>
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p class="mb-0">© 2024 Shop Mặt Trời Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
+                <p class="mb-0">© 2024 Mặt Trời Ú Nu. Dự án học tập - Không mục đích thương mại.</p>
             </div>
         </div>
     </footer>

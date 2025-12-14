@@ -71,6 +71,15 @@ img {
     padding: 15px 0;
 }
 
+.home-dropdown .dropdown-caret {
+    font-size: 0.85rem;
+}
+
+.navbar .dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
@@ -124,6 +133,25 @@ img {
 /* Navigation Links */
 .navbar-nav {
     gap: 5px;
+}
+
+.cart-quick .cart-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.85);
+    color: var(--dark-color);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cart-quick .cart-pill:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cart-quick .badge {
+    position: static;
 }
 
 .nav-link {
@@ -186,6 +214,25 @@ img {
 .category-links a:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+.info-strip {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+}
+
+.info-strip a {
+    color: #333;
+    font-weight: 500;
+}
+
+.info-strip a:hover {
+    color: var(--primary-color);
+}
+
+.info-strip .hotline {
+    color: var(--danger-color);
+    font-weight: 600;
 }
 
 /* Mobile Responsive */
@@ -396,6 +443,22 @@ img {
 .size-btn {
     min-width: 100px;
     transition: all 0.3s ease;
+}
+
+/* ===== HOME ANCHOR SECTIONS ===== */
+#aboutSection,
+#policySection {
+    scroll-margin-top: 90px;
+}
+
+.policies-preview .policy-card {
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.policies-preview .policy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .size-btn.active {
