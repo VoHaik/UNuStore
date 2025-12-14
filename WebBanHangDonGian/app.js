@@ -685,15 +685,20 @@ function loadCart() {
     if (emptyCart) emptyCart.style.display = 'none';
     if (cartContent) cartContent.style.display = 'block';
     
-    // Display cart items
+    // Display cart items with checkboxes
     if (cartItems) {
         cartItems.innerHTML = cart.map((item, index) => `
             <div class="cart-item">
                 <div class="row align-items-center">
+                    <div class="col-auto">
+                        <input class="form-check-input cart-item-checkbox" type="checkbox" 
+                               id="cartItem${index}" data-index="${index}" checked
+                               onchange="updateSelectedItems()">
+                    </div>
                     <div class="col-md-2">
                         <img src="${item.image}" alt="${item.name}" class="img-fluid rounded">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <h6>${item.name}</h6>
                         <p class="text-muted small mb-0">Kích thước: ${item.size}</p>
                         ${item.giftPackage ? '<p class="text-success small mb-0"><i class="fas fa-gift"></i> Có đóng gói quà</p>' : ''}
@@ -720,12 +725,30 @@ function loadCart() {
         `).join('');
     }
     
-    // Update summary
-    updateCartSummary(cart);
+    // Setup select all checkbox
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+    if (selectAllCheckbox) {
+        selectAllCheckbox.checked = true;
+        selectAllCheckbox.addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.cart-item-checkbox');
+            checkboxes.forEach(cb => cb.checked = this.checked);
+            updateSelectedItems();
+        });
+    }
+    
+    // Update summary with all items initially selected
+    updateSelectedItems();
     
     // Setup clear cart button
     document.getElementById('clearCartBtn')?.addEventListener('click', clearCart);
     document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+        const selectedItems = getSelectedCartItems();
+        if (selectedItems.length === 0) {
+            alert('Vui lòng chọn ít nhất một sản phẩm để thanh toán!');
+            return;
+        }
+        // Save selected items for checkout
+        localStorage.setItem('selectedCartItems', JSON.stringify(selectedItems));
         window.location.href = 'checkout.html';
     });
     
@@ -733,6 +756,43 @@ function loadCart() {
     const cartItemCount = document.getElementById('cartItemCount');
     if (cartItemCount) {
         cartItemCount.textContent = cart.length;
+    }
+}
+
+function getSelectedCartItems() {
+    const cart = getCart();
+    const selectedItems = [];
+    const checkboxes = document.querySelectorAll('.cart-item-checkbox:checked');
+    
+    checkboxes.forEach(cb => {
+        const index = parseInt(cb.dataset.index);
+        selectedItems.push(cart[index]);
+    });
+    
+    return selectedItems;
+}
+
+function updateSelectedItems() {
+    const cart = getCart();
+    const selectedItems = getSelectedCartItems();
+    
+    // Update selected count badge
+    const selectedCountEl = document.getElementById('selectedCount');
+    if (selectedCountEl) {
+        selectedCountEl.textContent = `Đã chọn: ${selectedItems.length}/${cart.length}`;
+    }
+    
+    // Update summary with only selected items
+    updateCartSummary(selectedItems);
+    
+    // Update select all checkbox state
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+    const allCheckboxes = document.querySelectorAll('.cart-item-checkbox');
+    const checkedCheckboxes = document.querySelectorAll('.cart-item-checkbox:checked');
+    
+    if (selectAllCheckbox && allCheckboxes.length > 0) {
+        selectAllCheckbox.checked = allCheckboxes.length === checkedCheckboxes.length;
+        selectAllCheckbox.indeterminate = checkedCheckboxes.length > 0 && checkedCheckboxes.length < allCheckboxes.length;
     }
 }
 
@@ -758,9 +818,15 @@ function updateCartSummary(cart) {
 
 // ===== CHECKOUT PAGE =====
 function loadCheckout() {
-    const cart = getCart();
+    // Get selected items from localStorage (set during checkout from cart page)
+    let checkoutItems = JSON.parse(localStorage.getItem('selectedCartItems') || '[]');
     
-    if (cart.length === 0) {
+    // If no selected items, use all cart items (for backward compatibility)
+    if (checkoutItems.length === 0) {
+        checkoutItems = getCart();
+    }
+    
+    if (checkoutItems.length === 0) {
         window.location.href = 'cart.html';
         return;
     }
@@ -768,7 +834,7 @@ function loadCheckout() {
     // Display order items
     const orderItemsContainer = document.getElementById('checkoutOrderItems');
     if (orderItemsContainer) {
-        orderItemsContainer.innerHTML = cart.map(item => `
+        orderItemsContainer.innerHTML = checkoutItems.map(item => `
             <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="d-flex align-items-center flex-grow-1">
                     <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover;" class="rounded me-2">
@@ -782,9 +848,9 @@ function loadCheckout() {
         `).join('');
     }
     
-    // Update totals
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const giftFee = cart.reduce((sum, item) => sum + (item.giftPackage ? 10000 * item.quantity : 0), 0);
+    // Update totals for selected items only
+    const subtotal = checkoutItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const giftFee = checkoutItems.reduce((sum, item) => sum + (item.giftPackage ? 10000 * item.quantity : 0), 0);
     const shipping = subtotal >= 200000 ? 0 : 30000;
     const total = subtotal + giftFee + shipping;
     
