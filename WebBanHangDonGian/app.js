@@ -640,7 +640,7 @@ function setupProductDetailEvents(product) {
             const quantity = parseInt(document.getElementById('quantity').value);
             const giftPackage = document.getElementById('giftPackage').checked;
             addToCart(product.id, quantity, window.selectedSize, giftPackage);
-            window.location.href = 'cart.html';
+            window.location.href = 'checkout.html';
         });
     }
 }
